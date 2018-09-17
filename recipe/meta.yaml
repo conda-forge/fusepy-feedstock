@@ -1,4 +1,4 @@
-{% set version = "2.0.4" %}
+{% set version = "3.0.1" %}
 
 package:
   name: fusepy
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/f/fusepy/fusepy-{{ version }}.tar.gz
-  sha256: 10f5c7f5414241bffecdc333c4d3a725f1d6605cae6b4eaf86a838ff49cdaf6c
+  sha256: 72ff783ec2f43de3ab394e3f7457605bf04c8cf288a2f4068b4cde141d4ee6bd
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   host:
